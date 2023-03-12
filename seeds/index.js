@@ -1,7 +1,7 @@
 const sequelize = require("../config/connection")
 const {User,Blog,Comment} = require("../models")
 
-const users = [
+const User = [
     {
         username: "Sandwich_Maker",
         password: "sandwiches"
@@ -17,7 +17,7 @@ const users = [
 
 ]
 
-const blogs = [
+const Blog = [
     {
         title: "Sandwich Structure",
         content: "bread, spread, meat, cheese, veggies",
@@ -40,7 +40,7 @@ const blogs = [
     },
 ]
 
-const comments = [
+const Comment = [
     {
         body: "nice structure!",
         blogId: 1,
