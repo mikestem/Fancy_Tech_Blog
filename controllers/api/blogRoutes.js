@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {User, Blog, Comment} = require("../../models");
-const withAuth = require('../../util/auth.js')
-
+const withAuth = require('../../utils/auth.js')
 
 router.get("/", (req, res) => {
     Blog.findAll({include:[User, Comment]})

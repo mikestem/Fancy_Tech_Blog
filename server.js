@@ -14,10 +14,12 @@ const { User, Blog, Comment } = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const sess = {
-  secret: process.env.DB_SESSION_SECRET,
+  secret: 'Super secret secret',
   cookie: {
-
-    maxAge: 0.5 * 60 * 60 * 1000
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
   },
   resave: false,
   saveUninitialized: true,

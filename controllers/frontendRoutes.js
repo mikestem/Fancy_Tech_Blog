@@ -35,7 +35,6 @@ router.get("/dashboard",(req,res)=>{
     })
 })
 
-// SINGLE POST PAGE FUNCTION
 router.get("/blogs/:id", (req, res) =>{
     if(!req.session.user) {
         return res.redirect('/login')
@@ -44,7 +43,7 @@ router.get("/blogs/:id", (req, res) =>{
     .then(dbBlog => {
         const hbsBlog = dbBlog.get({plain:true})
         const loggedIn = req.session.user?true:false;
-        console.log('==============')
+        console.log('====')
         console.log(hbsBlog)
         if (dbBlog.userId != req.session.user.id) {
             return res.render('comment', {hbsBlog, loggedIn, username:req.session.user?.username})
